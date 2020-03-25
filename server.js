@@ -44,7 +44,7 @@ const PORT = process.env.PORT || 4000
 
 //Database for online Mongodb
 
-mongoose.connect('mongodb+srv://UserAdmin:User495772@test-project-vdjiz.gcp.mongodb.net/moneyManagementApp?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(`mongodb+srv://${process.env.dbUsername}:${process.env.dbPassword}@test-project-vdjiz.gcp.mongodb.net/moneyManagementApp?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log('Database Connected')
         app.listen(PORT, () => {
